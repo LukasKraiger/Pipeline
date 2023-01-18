@@ -13,7 +13,7 @@ RUN apt-get update \
 apt-get purge && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN apt-get install -y inotifywait \
+RUN apt-get install -y inotify-tools \
     && mkdir src \
     && echo 'inotifywait -m /path -e create -e moved_to | \
     while read dir action file; do \
