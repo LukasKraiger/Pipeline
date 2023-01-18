@@ -19,8 +19,9 @@ RUN apt-get install -y inotifywait \
     while read dir action file; do \
         echo "The file '$file' appeared in directory '$dir' via '$action'" \
         ./src/renderengine.sh \
-    done' >> bot.sh echo
-    
+    done' >> bot.sh echo \
+    && echo 'rmarkdown::render("*.rmd, output_dir="Export" '
+
 RUN apt-get update \
 && apt-get upgrade -y \
 && apt-get install -y git \
