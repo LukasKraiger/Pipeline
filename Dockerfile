@@ -3,7 +3,8 @@ FROM ubuntu
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update \
 && apt-get upgrade -y \
-&& apt-get install -y gnupg2 wget \
+&& apt-get install -y gnupg2 wget mdm \
+&& ncpus \
 && apt-get install -y software-properties-common dirmngr \
 && wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | gpg --dearmor -o /usr/share/keyrings/r-project.gpg \
 && echo "deb [signed-by=/usr/share/keyrings/r-project.gpg] https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/" | tee -a /etc/apt/sources.list.d/r-project.list \
