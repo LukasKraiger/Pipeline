@@ -82,7 +82,7 @@ RUN R -e "devtools::install_github('LukasKraiger/frame')"
 
 RUN git clone https://github.com/LukasKraiger/R_Renderengine.git \
     && cd R_Renderengine \
-    && chmod x+u setup.sh \
+    && chmod u+x setup.sh \
     && ./setup.sh 
 
 RUN rm -rf .Rprofile
