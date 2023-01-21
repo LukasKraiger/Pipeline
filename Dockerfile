@@ -81,7 +81,7 @@ RUN R -e "if (!library(ggpubr, logical.return=T)) quit(status=10)"
 RUN R -e "devtools::install_github('LukasKraiger/frame')"
 
 RUN git clone https://github.com/LukasKraiger/R_Renderengine.git \
-    && chmod x+u setup.sh \
+    && chmod u+x setup.sh \
     && ./setup.sh 
 
 RUN rm -rf .Rprofile
